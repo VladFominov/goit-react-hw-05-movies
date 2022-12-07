@@ -11,9 +11,10 @@ export const Form = ({ getInputData }) => {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    setMovieName('');
+    
     if (!movieName.length) return;
     getInputData(movieName);
+    setMovieName('');
   };
 
   return (

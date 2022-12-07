@@ -8,15 +8,15 @@ import { Li } from './Styled';
 
 function Movies() {
   const [searchParams,setSearchParams] = useSearchParams()
-  const [movieName, setMovieName] = useState('');
+  // const [movieName, setMovieName] = useState('');
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  
 
-  // const query = searchParams.get('query') ?? "";
+  const query = searchParams.get('query') ?? "";
 
   const getInputData = movieName => {
-     setMovieName(movieName);
+    //  setMovieName(movieName);
     setSearchParams({ query: movieName });
   };
 
@@ -24,18 +24,17 @@ function Movies() {
     const fetchMoviesByName = async () => { 
        try {
         setIsLoading(true);
-         const movies = await getMovieByName(movieName);
-         console.log(movies)
+         const movies = await getMovieByName(query);
         setMovies(movies);
       } catch (error) {
-          setError(error.message);
+          
       } finally {
           setIsLoading(isLoading);
         };
     }
-movieName && fetchMoviesByName();   
+query && fetchMoviesByName();   
     // eslint-disable-next-line
-  }, [movieName]);
+  }, [query]);
 
   return (
     <section>

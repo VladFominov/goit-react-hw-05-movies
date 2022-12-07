@@ -3,7 +3,7 @@ import {
   Link,
   Route,
   Routes,
-  useLocation,
+  // useLocation,
   useNavigate,
   useParams,
 } from 'react-router-dom';
@@ -15,11 +15,11 @@ const LazyCastPage = lazy(() => import('../pages/CastPage'));
 const LazyReviewsPage = lazy(() => import('../pages/ReviewsPage'));
 
 function MovieDetails() {
-  const location = useLocation();
+  // const location = useLocation();
   const navigate = useNavigate();
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
-  const [error, setError] = useState('');
+
 
   const handleBackBtn = () => {
     navigate('/');
@@ -32,7 +32,7 @@ function MovieDetails() {
         console.log(getMovie);
         setMovie(getMovie);
       } catch (error) {
-        setError(error.message);
+       
       } finally {
       }
     };

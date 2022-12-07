@@ -7,7 +7,7 @@ import { CastInfo, CastPageWrapper } from './Styled';
 function CastPage() {
   const { movieId } = useParams();
   const [cast, setCast] = useState({});
-  const [error, setError] = useState('');
+
 
   useEffect(() => {
     const fetchCastDetails = async () => {
@@ -16,7 +16,7 @@ function CastPage() {
         setCast(cast);
         console.log(cast);
       } catch (error) {
-        setError(error.message);
+        
       } finally {
       }
     };

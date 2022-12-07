@@ -4,6 +4,7 @@ import { useState } from 'react';
 export const Form = ({ getInputData }) => {
   const [movieName, setMovieName] = useState('');
 
+  //some code
   const onInputChange = e => {
     const { value } = e.target;
     setMovieName(value);

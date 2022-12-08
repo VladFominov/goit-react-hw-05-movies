@@ -8,7 +8,7 @@ import { ReviewsWrapper } from './Styled';
 function ReviewsPage() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
-  const [error, setError] = useState('');
+
 
   useEffect(() => {
     const fetchReviewsDetails = async () => {
@@ -17,7 +17,7 @@ function ReviewsPage() {
         setReviews(reviews.results);
         console.log(reviews);
       } catch (error) {
-        setError(error.message);
+        
       } finally {
       }
     };
